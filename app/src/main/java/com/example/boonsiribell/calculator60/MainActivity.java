@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         output = findViewById(R.id.TV1);
-        output2 = findViewById(R.id.TV1);
+        output2 = findViewById(R.id.TV2);
         B12 = (Button) findViewById(R.id.B12);
         B13 = (Button) findViewById(R.id.B13);
         B14 = (Button) findViewById(R.id.B14);
@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         B8 = (Button) findViewById(R.id.B8);
         B9 = (Button) findViewById(R.id.B9);
         B0 = (Button) findViewById(R.id.B0);
+
+        output.setVisibility(View.INVISIBLE);
 
         B1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 input2 = Float.parseFloat(output.getText() + "");
+                output.setVisibility(View.VISIBLE);
                 if (sumAdd == true)
                 {
                     output.setText(input1 + input2 + "");
@@ -188,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 output.setText(output.getText()+".");
                 output2.setText(output2.getText() + ".");
+
             }
         });
     }
